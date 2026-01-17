@@ -40,7 +40,7 @@ export default function Login() {
             ''
           )}
 
-          <div className="w-20 h-20 mx-auto bg-gradient-to-r from-indigo-500 to-sky-500 rounded-2xl flex items-center justify-center shadow-xl shadow-indigo-700/40">
+          <div className="w-20 h-20 mx-auto bg-gradient-to-r from-orange-500 to-orange-500 rounded-2xl flex items-center justify-center shadow-xl shadow-orange-700/40">
             <svg
               className="w-10 h-10 text-white"
               fill="none"
@@ -57,7 +57,7 @@ export default function Login() {
           </div>
 
           <div className="space-y-2">
-            <h2 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-white via-sky-100 to-sky-300 bg-clip-text text-transparent">
+            <h2 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-white via-orange-100 to-orange-300 bg-clip-text text-transparent">
               Welcome Back
             </h2>
             <p className="text-slate-300 text-sm lg:text-base max-w-xs mx-auto leading-relaxed">
@@ -82,7 +82,7 @@ export default function Login() {
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Enter your email"
-              className="w-full px-5 py-4 bg-slate-800/70 border border-slate-600 rounded-2xl text-slate-50 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 shadow-lg hover:shadow-xl hover:border-sky-500/60"
+              className="w-full px-5 py-4 bg-slate-800/70 border border-slate-600 rounded-2xl text-slate-50 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 shadow-lg hover:shadow-xl hover:border-orange-500/60"
               disabled={loading}
             />
           </div>
@@ -101,7 +101,7 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
               required
               placeholder="Enter your password"
-              className="w-full px-5 py-4 bg-slate-800/70 border border-slate-600 rounded-2xl text-slate-50 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 shadow-lg hover:shadow-xl hover:border-sky-500/60"
+              className="w-full px-5 py-4 bg-slate-800/70 border border-slate-600 rounded-2xl text-slate-50 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 shadow-lg hover:shadow-xl hover:border-orange-500/60"
               disabled={loading}
             />
           </div>
@@ -109,7 +109,7 @@ export default function Login() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-4 px-6 bg-gradient-to-r from-indigo-500 to-sky-500 hover:from-indigo-600 hover:to-sky-600 disabled:from-slate-600 disabled:to-slate-700 text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-sky-500/40 transition-all duration-300 transform disabled:cursor-not-allowed disabled:transform-none"
+            className="w-full py-4 px-6 bg-gradient-to-r from-orange-500 to-orange-500 hover:from-orange-600 hover:to-orange-600 disabled:from-slate-600 disabled:to-slate-700 text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-orange-500/40 transition-all duration-300 transform disabled:cursor-not-allowed disabled:transform-none"
           >
             {loading ? (
               <span className="flex items-center justify-center gap-2">
@@ -141,7 +141,7 @@ export default function Login() {
           Don't have an account?{' '}
           <NavLink
             to="/register"
-            className="font-semibold text-sky-400 hover:text-sky-300 hover:underline transition-colors duration-200"
+            className="font-semibold text-orange-400 hover:text-orange-300 hover:underline transition-colors duration-200"
           >
             Create one here!
           </NavLink>

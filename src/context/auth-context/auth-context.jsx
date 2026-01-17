@@ -12,6 +12,7 @@ import {
   createUserWithEmailAndPassword,
   signOut as firebaseSignOut,
   onAuthStateChanged,
+  updateProfile,
 } from '../../firebase/index-firebase.jsx';
 
 const AuthContext = createContext();
@@ -41,8 +42,27 @@ export function AuthProvider({ children }) {
     return signInWithEmailAndPassword(auth, email, password);
   }, []);
 
-  const register = useCallback((name, email, password) => {
-    return createUserWithEmailAndPassword(auth, name, email, password);
+  const register = useCallback(async (name, email, password) => {
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password,
+    );
+
+    return new Promise((resolve, reject) => {
+      const unsubscribe = onAuthStateChanged(auth, async (user) => {
+        if (user && user.uid === userCredential.user.uid) {
+          try {
+            await updateProfile(user, { displayName: name });
+            unsubscribe();
+            resolve(userCredential);
+          } catch (error) {
+            unsubscribe();
+            reject(error);
+          }
+        }
+      });
+    });
   }, []);
 
   const logout = useCallback(() => {

@@ -3,7 +3,7 @@ import { useAuth } from './context/auth-Context/auth-context.jsx';
 
 function App() {
   const { user } = useAuth();
-  console.log(user ? 'logged in' : 'not logged in');
+  // console.log(user ? 'logged in' : 'not logged in');
 
   return (
     <div>
