@@ -3,10 +3,11 @@ import { useAuth } from './context/auth-Context/auth-context.jsx';
 
 function App() {
   const { user } = useAuth();
+  console.log(user ? 'logged in' : 'not logged in');
 
   return (
     <div>
-      <h3>Welcome {user?.displayName}!</h3>
+      <h3>{user ? `Welcome ${user?.displayName}!` : 'Welcome!'}</h3>
     </div>
   );
 }
