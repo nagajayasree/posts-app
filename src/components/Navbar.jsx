@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router';
+import LogOut from '../auth/Logout';
+import { useAuth } from '../context/auth-Context/auth-context.jsx';
 
-export default function Navbar() {
+export default function NavBar() {
+  const { user } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -67,20 +70,24 @@ export default function Navbar() {
             </li>
           </ul>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <NavLink
-              to="/login"
-              className="px-5 py-2.5 text-sm font-medium text-gray-300 hover:text-white hover:bg-orange-500/30 rounded-xl transition-all duration-300 border border-gray-700/50 hover:border-orange-500/50"
-            >
-              Login
-            </NavLink>
-            <NavLink
-              to="/register"
-              className="px-6 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold text-sm rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-            >
-              Sign Up
-            </NavLink>
-          </div>
+          {user ? (
+            <LogOut />
+          ) : (
+            <div className="hidden lg:flex items-center gap-3">
+              <NavLink
+                to="/login"
+                className="px-5 py-2.5 text-sm font-medium text-gray-300 hover:text-white hover:bg-orange-500/30 rounded-xl transition-all duration-300 border border-gray-700/50 hover:border-orange-500/50"
+              >
+                Login
+              </NavLink>
+              <NavLink
+                to="/register"
+                className="px-6 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold text-sm rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Register
+              </NavLink>
+            </div>
+          )}
 
           {/* Mobile menu button */}
           <button

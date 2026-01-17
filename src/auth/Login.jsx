@@ -1,35 +1,27 @@
 import { useState } from 'react';
 import { useNavigate, NavLink } from 'react-router';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import app from '../firebase/index.jsx';
-
-const auth = getAuth(app);
+import { useAuth } from '../context/auth-Context/auth-context';
 
 export default function Login() {
+  const { login } = useAuth();
+
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
-  const [status, setStatus] = useState(false);
 
   const onSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      setStatus(true);
-      setMessage('Logged in successfully!');
-      setEmail('');
-      setPassword('');
+      setMessage('');
+      await login(email, password);
       navigate('/');
     } catch (err) {
-      setStatus(false);
-      setMessage('Incorrect email or password!');
+      setMessage('Failed to log in');
       console.error(err);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -39,14 +31,13 @@ export default function Login() {
         {/* Header */}
         <div className="text-center space-y-4">
           {/* Status Message */}
-          {status === true ? (
-            <div className="font-semibold text-green-400 transition-colors">
+
+          {message !== '' ? (
+            <div className="font-semibold text-red-400 transition-colors">
               {message}
             </div>
           ) : (
-            <div className="font-semibold text-red-400 transition-colors duration-200">
-              {message}
-            </div>
+            ''
           )}
 
           <div className="w-20 h-20 mx-auto bg-gradient-to-r from-indigo-500 to-sky-500 rounded-2xl flex items-center justify-center shadow-xl shadow-indigo-700/40">

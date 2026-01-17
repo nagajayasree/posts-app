@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useNavigate, NavLink } from 'react-router';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import app from '../firebase/index.jsx';
-
-const auth = getAuth(app);
+import { useAuth } from '../context/auth-Context/auth-context.jsx';
 
 export default function Register() {
+  const { register } = useAuth();
+
   const navigate = useNavigate();
+
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -18,10 +19,8 @@ export default function Register() {
     setError('');
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await register(name, email, password);
       alert('Account created successfully!');
-      setEmail('');
-      setPassword('');
       navigate('/login');
     } catch (err) {
       console.error(err);
@@ -61,6 +60,26 @@ export default function Register() {
 
         {/* Form */}
         <form onSubmit={onSubmit} className="space-y-6">
+          {/* Full Name */}
+          <div className="space-y-2">
+            <label
+              htmlFor="name"
+              className="block text-sm font-semibold text-slate-200"
+            >
+              Name
+            </label>
+            <input
+              id="name"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              placeholder="Enter your name"
+              className="w-full px-5 py-4 bg-slate-800/70 border border-slate-600 rounded-2xl text-slate-50 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 shadow-lg hover:shadow-xl hover:border-sky-500/60"
+              disabled={loading}
+            />
+          </div>
+
           {/* Email */}
           <div className="space-y-2">
             <label
@@ -135,7 +154,7 @@ export default function Register() {
                 Creating account...
               </span>
             ) : (
-              'Sign Up'
+              'Register'
             )}
           </button>
         </form>
