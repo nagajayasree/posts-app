@@ -5,9 +5,9 @@ export default function Profile() {
   const { user } = useAuth();
 
   return (
-    <div className="g-white border-b border-gray-200">
+    <div className="bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-colors duration-200">
+        <div className="bg-white border-b border-gray-200 rounded-xl shadow-lg overflow-hidden transition-colors duration-200">
           <div className="relative h-48">
             <img
               src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
@@ -26,10 +26,10 @@ export default function Profile() {
           <div className="pt-16 px-6 pb-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+                <h1 className="text-2xl font-bold text-gray-900">
                   {user.displayName}
                 </h1>
-                <p className="text-orange-600 dark:text-orange-400">
+                <p className="text-orange-600">
                   {user.about || 'Fetch Game Expert'}
                 </p>
               </div>
@@ -39,38 +39,36 @@ export default function Profile() {
               </button>
             </div>
 
-            <p className="mt-6 text-gray-600 dark:text-gray-300">
+            <p className="mt-6 text-gray-900">
               {user.info ||
                 `Hi, I'm a naughty, cutie, tail-wagging adventurer who lives for fetch sessions, belly rubs, and cozy couch naps. This good boy girl! knows basic commands and loves daily walks, treats, and making new human friends.`}
             </p>
 
             <div className="mt-6">
-              <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+              <h2 className="text-lg font-semibold text-gray-900 mb-3">
                 Interests
               </h2>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-300 rounded-lg text-sm font-medium">
+                <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-lg text-sm font-medium">
                   Playing fetch with toys
                 </span>
-                <span className="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-300 rounded-lg text-sm font-medium">
+                <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-lg text-sm font-medium">
                   Food/Treats
                 </span>
-                <span className="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-300 rounded-lg text-sm font-medium">
+                <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-lg text-sm font-medium">
                   Naps
                 </span>
-                <span className="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-300 rounded-lg text-sm font-medium">
+                <span className="px-3 py-1 bg-orange-100 text-orange-600 rounded-lg text-sm font-medium">
                   Frisbee
                 </span>
               </div>
             </div>
 
             <div className="mt-6">
-              <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                Contact
-              </h2>
+              <h2 className="text-lg font-semibold text-gray-900">Contact</h2>
               <a
                 href=""
-                className="inline-flex items-center text-orange-600 dark:text-orange-400 hover:underline"
+                className="inline-flex items-center text-orange-600 hover:underline"
               >
                 <svg
                   className="w-5 h-5 mr-2"
