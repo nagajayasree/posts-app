@@ -1,5 +1,5 @@
 import { useAuth } from '../context/auth-Context/auth-context';
-import { PencilSquareIcon, PencilIcon } from '@heroicons/react/24/solid';
+import { PencilSquareIcon } from '@heroicons/react/24/solid';
 
 export default function Profile() {
   const { user } = useAuth();
@@ -18,7 +18,7 @@ export default function Profile() {
               <img
                 src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
                 alt="Profile"
-                className="w-24 h-24 rounded-xl object-cover border-4 border-white dark:border-gray-800 shadow-lg"
+                className="w-24 h-24 rounded-xl object-cover border-4 border-white shadow-lg"
               />
             </div>
           </div>
@@ -30,7 +30,7 @@ export default function Profile() {
                   {user.displayName}
                 </h1>
                 <p className="text-orange-600">
-                  {user.about || 'Fetch Game Expert'}
+                  {user.about || 'Fetch Game Expert 🐶'}
                 </p>
               </div>
               <button className="inline-flex items-center px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg transition-colors duration-200 text-sm font-medium">
@@ -41,7 +41,7 @@ export default function Profile() {
 
             <p className="mt-6 text-gray-900">
               {user.info ||
-                `Hi, I'm a naughty, cutie, tail-wagging adventurer who lives for fetch sessions, belly rubs, and cozy couch naps. This good boy girl! knows basic commands and loves daily walks, treats, and making new human friends.`}
+                `Hi, I'm a naughty, cutie, tail-wagging adventurer who lives for fetch sessions, belly rubs, and cozy couch naps. This is a good girl! knows basic commands and loves daily walks, treats, and making new human friends.`}
             </p>
 
             <div className="mt-6">

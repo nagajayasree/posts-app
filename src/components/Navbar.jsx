@@ -3,6 +3,7 @@ import { NavLink } from 'react-router';
 import LogOut from '../auth/Logout';
 import { useAuth } from '../context/auth-Context/auth-context.jsx';
 import { UserCircleIcon } from '@heroicons/react/24/outline';
+import reactLogo from '../assets/react.svg';
 
 export default function NavBar() {
   const { user } = useAuth();
@@ -16,9 +17,9 @@ export default function NavBar() {
           <div className="flex-shrink-0">
             <NavLink to="/" className="flex items-center gap-2 group">
               <img
-                src="/logo.png"
-                alt="Logo"
-                className="h-10 w-10 lg:h-12 lg:w-12 rounded-xl shadow-lg group-hover:scale-105 transition-all duration-300"
+                src={reactLogo}
+                className="h-8 w-8 lg:h-8 lg:w-8 rounded-xl shadow-lg group-hover:scale-105 transition-all duration-300"
+                alt="logo"
               />
               <span className="hidden lg:block text-xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
                 Posts App
@@ -43,7 +44,7 @@ export default function NavBar() {
             </li>
             <li>
               <NavLink
-                to="/posts"
+                to="/create-post"
                 className={({ isActive }) =>
                   `px-4 py-2 lg:px-6 lg:py-3 rounded-2xl font-medium text-sm lg:text-base transition-all duration-300 shadow-md ${
                     isActive
@@ -52,7 +53,7 @@ export default function NavBar() {
                   }`
                 }
               >
-                Posts
+                Create Post
               </NavLink>
             </li>
           </ul>
@@ -63,9 +64,9 @@ export default function NavBar() {
                 <LogOut />
                 <NavLink
                   to="/profile"
-                  className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-orange-500"
+                  className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-orange-500 group"
                 >
-                  <UserCircleIcon className="h-10 w-10" />
+                  <UserCircleIcon className="h-10 w-10 group-hover:scale-105" />
                 </NavLink>
               </div>
             ) : (

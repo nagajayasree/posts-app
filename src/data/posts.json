@@ -1,0 +1,34 @@
+[
+  {
+    "author": "John Doe",
+    "image": "https://images.unsplash.com/photo-1470181942237-78ce33fec141?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=400",
+    "postid": "post001",
+    "title": "Montreal Winter Trails",
+    "subtitle": "Hidden gems for snowshoeing",
+    "description": "Found incredible trails near Mont Tremblant. Perfect for winter escapes from the city with breathtaking views."
+  },
+  {
+    "author": "Jane Smith",
+    "image": "https://images.unsplash.com/photo-1671946211703-175706276dda?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW9udHJlYWwlMjBoaWtpbmd8ZW58MHx8MHx8fDA%3D?w=400",
+    "postid": "post002",
+    "title": "Exploring Montreal's Hidden Gems",
+    "subtitle": "A weekend adventure in nature",
+    "description": "Discovered some amazing trails near Mont-Royal. Perfect for hiking and photography. Highly recommend for locals and visitors alike."
+  },
+  {
+    "author": "Alex Chen",
+    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400",
+    "postid": "post003",
+    "title": "Fiber-Rich Winter Meals",
+    "subtitle": "Healthy recipes from Metro",
+    "description": "Quinoa bowls with roasted root veggies. High fiber, winter comfort food that's actually good for you."
+  },
+  {
+    "author": "Sarah Lee",
+    "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGRvZ3xlbnwwfHwwfHx8MA%3D%3D?w=400",
+    "postid": "post004",
+    "title": "Winter Dog Grooming",
+    "subtitle": "Paw protection + coat care",
+    "description": "Cold weather grooming routine using Walmart paw balms and deshedding tools. Keeps pups happy all winter."
+  }
+]
