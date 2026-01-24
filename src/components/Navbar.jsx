@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router';
 import LogOut from '../auth/Logout';
-import { useAuth } from '../context/auth-Context/auth-context.jsx';
+import { useAuth } from '../context/auth-context/auth-context';
 import { UserCircleIcon } from '@heroicons/react/24/outline';
 import reactLogo from '../assets/react.svg';
 

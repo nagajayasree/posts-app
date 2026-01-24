@@ -1,4 +1,4 @@
-import { useAuth } from '../context/auth-Context/auth-context';
+import { useAuth } from '../context/auth-context/auth-context';
 import { useNavigate } from 'react-router';
 
 export default function LogOut() {

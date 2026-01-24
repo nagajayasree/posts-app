@@ -73,7 +73,7 @@ export default function CreatePost() {
             />
           </div>
 
-          <div>
+          <div className="mb-6">
             <label
               htmlFor="image-upload"
               className="block w-full h-48 border-2 border-dashed border-gray-300 rounded-md cursor-pointer flex flex-col items-center justify-center bg-[#f6f6f6] hover:bg-gray-50"
@@ -118,6 +118,7 @@ export default function CreatePost() {
               disabled={loading}
             />
           </div>
+
           <button
             type="submit"
             onClick={onSubmit}
